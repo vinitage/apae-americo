@@ -1,0 +1,14 @@
+# Documentos internos — nunca subir ao servidor
+briefing.md
+design-system/
+*.ps1
+
+# Arquivos temporários
+temp*.png
+temp*.jpg
+
+# Dependências
+node_modules/
+
+# Claude Code
+.claude/
