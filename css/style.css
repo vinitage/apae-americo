@@ -1697,7 +1697,7 @@ body {
 .ca-btn:focus-visible { outline: 3px solid var(--blue-primary); outline-offset: 3px; }
 
 @media (min-width: 768px) {
-  .ca-grid { grid-template-columns: repeat(3, 1fr); }
+  .ca-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (min-width: 1024px) {
