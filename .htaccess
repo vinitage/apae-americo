@@ -5,6 +5,14 @@
 Options +FollowSymLinks -MultiViews
 RewriteEngine On
 
+# ----- Bloqueio de acesso a .git e arquivos ocultos -----
+RewriteRule ^\.git - [F,L]
+RedirectMatch 404 /\.git
+
+<FilesMatch "^\.">
+  Require all denied
+</FilesMatch>
+
 # ----- HTTPS redirect -----
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
