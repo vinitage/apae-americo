@@ -3028,6 +3028,22 @@ body {
   user-select: none;
 }
 
+.tp-btn-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 6px;
+  background: var(--blue-light);
+  color: var(--blue-primary);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background var(--ease-fast), color var(--ease-fast);
+}
+.tp-btn-download:hover { background: var(--blue-primary); color: var(--white); }
+.tp-btn-download:focus-visible { outline: 3px solid var(--blue-primary); outline-offset: 2px; }
+
 /* ----- Page CTA ----- */
 .tp-cta {
   background: var(--blue-light);
@@ -4606,6 +4622,18 @@ body {
   width: fit-content;
   opacity: 0.7;
 }
+
+.inst-doc-btn--active {
+  border-color: var(--blue-primary);
+  background: var(--white);
+  color: var(--blue-primary);
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 1;
+  transition: background var(--ease-fast), color var(--ease-fast);
+}
+.inst-doc-btn--active:hover { background: var(--blue-primary); color: var(--white); }
+.inst-doc-btn--active:focus-visible { outline: 3px solid var(--blue-primary); outline-offset: 2px; }
 
 /* ----- Final CTA (blue-deeper bg) ----- */
 .inst-cta {
