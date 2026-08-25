@@ -2409,6 +2409,14 @@ body {
   user-select: none;
 }
 
+.par-logo {
+  max-width: 100%;
+  max-height: 32px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
 .par-footer { text-align: center; }
 
 .par-btn {
@@ -5661,6 +5669,17 @@ body {
 }
 .jn-partner-logo-ph--a { background: linear-gradient(90deg, #1239A6, #1A56DB); opacity: .22; }
 .jn-partner-logo-ph--b { background: linear-gradient(90deg, #F5B800, #E8A000); opacity: .35; }
+
+.jn-partner-item--filled { border-style: solid; }
+
+.jn-partner-logo {
+  max-width: 100%;
+  max-height: 40px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  padding: 0 12px;
+}
 
 .jn-partners__footer { text-align: center; }
 
