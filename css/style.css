@@ -2139,6 +2139,7 @@ body {
 }
 .np-badge--event { color: #92400e; background: #FFF4D2; }
 .np-badge--info  { color: #166534; background: #f0fdf4; }
+.np-badge--parceria { color: #7C3AED; background: #F3E8FF; }
 
 .np-date {
   font-family: var(--font-body);
@@ -2448,6 +2449,7 @@ body {
 @media (min-width: 1024px) {
   .parceiros  { padding: 112px 0; }
   .par-header { margin-bottom: 64px; }
+  .par-grid   { grid-template-columns: repeat(5, 1fr); }
 }
 
 @media (min-width: 1280px) { .parceiros { padding: 128px 0; } }
@@ -5641,6 +5643,7 @@ body {
 }
 
 @media (min-width: 640px) { .jn-partners__grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 1024px) { .jn-partners__grid { grid-template-columns: repeat(5, 1fr); } }
 
 .jn-partner-item {
   background: #fff;
@@ -5823,6 +5826,7 @@ body {
 .nw-card__badge--noticias  { background: #EBF2FF; color: #1A56DB; }
 .nw-card__badge--eventos   { background: #FFF4D2; color: #92400e; }
 .nw-card__badge--informativos { background: #f0fdf4; color: #166534; }
+.nw-card__badge--parceria  { background: #F3E8FF; color: #7C3AED; }
 
 .nw-card__date {
   font-size: .8125rem;
@@ -6868,6 +6872,149 @@ body {
   .lgpd-content { padding: 80px 0 112px; }
   .lgpd-section { padding: 48px 0; }
 }
+
+/* =================================================================
+   ARTIGO DE NOTÍCIA — página individual (noticia-*.html)
+   ================================================================= */
+.article-hero-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 4px 0 20px;
+  flex-wrap: wrap;
+}
+
+.article-badge {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+.article-badge--parceria { background: #F3E8FF; color: #7C3AED; }
+
+.article-hero-date {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: rgba(255,255,255,.7);
+}
+
+.article-body { background: var(--white); padding: 56px 20px 72px; }
+.article-body__inner { max-width: 700px; margin: 0 auto; }
+
+.article-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: .9375rem;
+  color: var(--blue-primary);
+  text-decoration: none;
+  margin-bottom: 28px;
+}
+.article-back:hover { text-decoration: underline; }
+
+.article-lead {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: var(--gray-900);
+  font-weight: 500;
+  margin-bottom: 28px;
+}
+
+.article-h2 {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--blue-deeper);
+  margin: 36px 0 14px;
+}
+
+.article-text {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--gray-600);
+  margin-bottom: 16px;
+}
+
+.article-check-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin: 20px 0 28px;
+}
+@media (min-width: 640px) {
+  .article-check-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.article-check-card {
+  border-radius: 12px;
+  padding: 20px 22px;
+  border: 1.5px solid var(--gray-200);
+}
+.article-check-card--yes { background: var(--blue-light); border-color: #BFDBFE; }
+.article-check-card--no  { background: #FEF2F2; border-color: #FECACA; }
+
+.article-check-card h3 {
+  font-family: var(--font-body);
+  font-size: .9375rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.article-check-card--yes h3 { color: var(--blue-primary); }
+.article-check-card--no h3  { color: #B91C1C; }
+
+.article-check-card p {
+  font-family: var(--font-body);
+  font-size: .875rem;
+  line-height: 1.65;
+  color: var(--gray-600);
+}
+
+.article-partners {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  padding: 24px;
+  background: var(--cream);
+  border-radius: 12px;
+  margin: 28px 0;
+}
+.article-partners img { max-height: 40px; width: auto; max-width: 150px; object-fit: contain; }
+
+.article-quote {
+  border-left: 3px solid var(--yellow-sun);
+  background: var(--yellow-soft);
+  padding: 20px 24px;
+  border-radius: 0 12px 12px 0;
+  margin: 24px 0;
+}
+.article-quote p {
+  font-family: var(--font-body);
+  font-size: .9375rem;
+  line-height: 1.7;
+  color: var(--gray-900);
+  margin: 0 0 10px;
+}
+.article-quote p:last-child { margin-bottom: 0; }
+.article-quote-tags {
+  display: block;
+  color: var(--blue-primary);
+  font-weight: 600;
+  font-size: .875rem;
+}
+
+.article-cta { text-align: center; margin: 36px 0 8px; }
+
+.article-embed { margin: 32px auto 0; max-width: 500px; }
 
 /* ── Mobile: reduzir espaço entre header e hero (index.html) ────────────────── */
 @media (max-width: 767px) {
