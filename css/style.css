@@ -6918,6 +6918,26 @@ body {
 }
 .article-back:hover { text-decoration: underline; }
 
+.article-cover {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  margin: 0 auto 28px;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.article-inline-img {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  margin: 20px auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
 .article-lead {
   font-family: var(--font-body);
   font-size: 1.125rem;
