@@ -2388,8 +2388,8 @@ body {
 .par-item {
   border: 1px solid var(--gray-200);
   border-radius: 8px;
-  padding: 24px;
-  height: 80px;
+  padding: 16px;
+  height: 104px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2411,7 +2411,7 @@ body {
 
 .par-logo {
   max-width: 100%;
-  max-height: 32px;
+  max-height: 64px;
   width: auto;
   height: auto;
   object-fit: contain;
@@ -2448,7 +2448,6 @@ body {
 @media (min-width: 1024px) {
   .parceiros  { padding: 112px 0; }
   .par-header { margin-bottom: 64px; }
-  .par-grid   { grid-template-columns: repeat(6, 1fr); }
 }
 
 @media (min-width: 1280px) { .parceiros { padding: 128px 0; } }
@@ -5642,12 +5641,11 @@ body {
 }
 
 @media (min-width: 640px) { .jn-partners__grid { grid-template-columns: repeat(3, 1fr); } }
-@media (min-width: 1024px) { .jn-partners__grid { grid-template-columns: repeat(6, 1fr); } }
 
 .jn-partner-item {
   background: #fff;
   border-radius: 12px;
-  height: 88px;
+  height: 112px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -5674,7 +5672,7 @@ body {
 
 .jn-partner-logo {
   max-width: 100%;
-  max-height: 40px;
+  max-height: 68px;
   width: auto;
   height: auto;
   object-fit: contain;
