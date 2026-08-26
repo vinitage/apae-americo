@@ -7045,6 +7045,7 @@ body {
   align-items: stretch;
   gap: 20px;
   margin: 20px 0 28px;
+  clear: left;
 }
 .article-doacao-row .article-inline-img {
   width: 220px;
