@@ -515,3 +515,41 @@
     });
   });
 })();
+
+
+/* -----------------------------------------------------------------
+   12. CARD SHARE MENU — [data-share-toggle] / [data-share-menu]
+   ----------------------------------------------------------------- */
+(function () {
+  document.addEventListener('click', function (e) {
+    var toggle = e.target.closest('[data-share-toggle]');
+
+    if (toggle) {
+      var menu = toggle.parentElement.querySelector('[data-share-menu]');
+      var wasHidden = menu.hidden;
+
+      document.querySelectorAll('[data-share-menu]').forEach(function (m) {
+        m.hidden = true;
+      });
+      document.querySelectorAll('[data-share-toggle]').forEach(function (t) {
+        t.setAttribute('aria-expanded', 'false');
+      });
+
+      if (wasHidden) {
+        menu.hidden = false;
+        toggle.setAttribute('aria-expanded', 'true');
+      }
+      e.stopPropagation();
+      return;
+    }
+
+    if (!e.target.closest('[data-share-menu]')) {
+      document.querySelectorAll('[data-share-menu]').forEach(function (m) {
+        m.hidden = true;
+      });
+      document.querySelectorAll('[data-share-toggle]').forEach(function (t) {
+        t.setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
+})();
