@@ -553,3 +553,60 @@
     }
   });
 })();
+
+
+/* -----------------------------------------------------------------
+   13. INSTAGRAM STORY SHARE — [data-ig-story] buttons
+   No mobile com suporte a Web Share (Level 2), abre o share sheet
+   nativo com a imagem (OG image, que já tem o título) para o usuário
+   escolher "Instagram > Adicionar ao stories". Sem suporte (desktop
+   ou navegador antigo), baixa a imagem e copia o link, com aviso.
+   ----------------------------------------------------------------- */
+(function () {
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('[data-ig-story]');
+    if (!btn) return;
+
+    var imageUrl = btn.getAttribute('data-ig-image');
+    if (!imageUrl) return;
+
+    e.preventDefault();
+
+    var pageUrl = btn.getAttribute('data-ig-url') || window.location.href;
+    var title = btn.getAttribute('data-ig-title') || document.title;
+    var label = btn.querySelector('.article-share__btn-text');
+
+    function fallback() {
+      var a = document.createElement('a');
+      a.href = imageUrl;
+      a.download = 'apae-noticia.jpg';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+
+      navigator.clipboard.writeText(pageUrl).then(function () {
+        if (label) {
+          var original = label.textContent;
+          label.textContent = 'Imagem baixada!';
+          setTimeout(function () { label.textContent = original; }, 2500);
+        } else {
+          alert('Imagem baixada e link copiado! Abra o Instagram e poste no seu Stories.');
+        }
+      });
+    }
+
+    fetch(imageUrl)
+      .then(function (res) { return res.blob(); })
+      .then(function (blob) {
+        var file = new File([blob], 'apae-noticia.jpg', { type: blob.type || 'image/jpeg' });
+        if (navigator.canShare && navigator.canShare({ files: [file] })) {
+          return navigator.share({ files: [file], title: title, text: title + ' ' + pageUrl });
+        }
+        throw new Error('web-share-unsupported');
+      })
+      .catch(function (err) {
+        if (err && err.name === 'AbortError') return;
+        fallback();
+      });
+  });
+})();
