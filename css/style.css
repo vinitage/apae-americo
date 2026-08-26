@@ -6919,6 +6919,11 @@ body {
   margin-bottom: 28px;
 }
 .article-back:hover { text-decoration: underline; }
+.article-back--end {
+  display: flex;
+  clear: left;
+  margin: 40px 0 0;
+}
 
 /* Magazine layout: image floats left, text wraps beside it, then continues
    full width once past the image — standard for all news articles */
