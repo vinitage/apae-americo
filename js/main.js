@@ -491,3 +491,27 @@
 
   });
 })();
+
+
+/* -----------------------------------------------------------------
+   11. COPY LINK — [data-copy-link] buttons (article share widget)
+   ----------------------------------------------------------------- */
+(function () {
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('[data-copy-link]');
+    if (!btn) return;
+
+    var url = btn.getAttribute('data-copy-value') || window.location.href;
+    var label = btn.querySelector('.article-share__btn-text');
+    var originalText = label ? label.textContent : null;
+
+    navigator.clipboard.writeText(url).then(function () {
+      btn.classList.add('article-share__btn--copied');
+      if (label) label.textContent = 'Link copiado!';
+      setTimeout(function () {
+        btn.classList.remove('article-share__btn--copied');
+        if (label && originalText) label.textContent = originalText;
+      }, 2000);
+    });
+  });
+})();

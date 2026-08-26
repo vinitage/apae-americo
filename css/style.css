@@ -6903,7 +6903,7 @@ body {
 }
 
 .article-body { background: var(--white); padding: 56px 20px 72px; }
-.article-body__inner { max-width: 700px; margin: 0 auto; }
+.article-body__inner { max-width: 1140px; margin: 0 auto; }
 
 .article-back {
   display: inline-flex;
@@ -6918,15 +6918,73 @@ body {
 }
 .article-back:hover { text-decoration: underline; }
 
+/* Horizontal layout: media column left, content column right — standard for all news articles */
+.article-layout { display: block; }
+
+@media (min-width: 900px) {
+  .article-layout {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+  .article-media { position: sticky; top: 96px; }
+}
+
+.article-content { max-width: 700px; }
+
 .article-cover {
   display: block;
   width: 100%;
   max-width: 420px;
   height: auto;
-  margin: 0 auto 28px;
+  margin: 0 auto 20px;
   border-radius: 16px;
   object-fit: cover;
 }
+@media (min-width: 900px) {
+  .article-cover { max-width: 100%; margin: 0 0 20px; }
+}
+
+.article-share {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+@media (min-width: 900px) {
+  .article-share { justify-content: flex-start; }
+}
+
+.article-share__label {
+  font-family: var(--font-body);
+  font-size: .8125rem;
+  font-weight: 600;
+  color: var(--gray-600);
+  margin-right: 2px;
+}
+
+.article-share__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 13px;
+  border-radius: 20px;
+  border: 1.5px solid var(--gray-200);
+  background: var(--white);
+  color: var(--gray-900);
+  font-family: var(--font-body);
+  font-size: .8125rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color var(--ease-fast), background var(--ease-fast), color var(--ease-fast);
+}
+.article-share__btn--whatsapp:hover { border-color: #25D366; background: #F0FDF4; color: #16803C; }
+.article-share__btn--facebook:hover { border-color: #1877F2; background: #EFF6FF; color: #1877F2; }
+.article-share__btn--copy:hover { border-color: var(--blue-primary); background: var(--blue-light); }
+.article-share__btn--copied { border-color: #16A34A !important; background: #F0FDF4 !important; color: #16A34A !important; }
 
 .article-inline-img {
   display: block;
