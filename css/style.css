@@ -7132,6 +7132,15 @@ body {
 }
 
 .article-cta { text-align: center; margin: 36px 0 8px; }
+@media (max-width: 640px) {
+  .article-cta .btn-donate {
+    white-space: normal;
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+    padding: 14px 20px;
+  }
+}
 
 .article-embed { margin: 32px auto 0; max-width: 500px; }
 
