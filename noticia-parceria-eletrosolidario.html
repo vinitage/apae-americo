@@ -44,7 +44,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="css/style.css?v=20260829">
+  <link rel="stylesheet" href="css/style.css?v=20260830">
 
   <!-- Schema JSON-LD: BreadcrumbList + NewsArticle -->
   <script type="application/ld+json">
@@ -340,11 +340,22 @@
 
         <div class="article-layout">
 
-          <!-- EN: Media column — cover image + share buttons -->
+          <!-- EN: Floated cover image — text wraps beside it, then continues full width -->
           <aside class="article-media">
             <img src="images/noticias/parceria-industriafox-eletrosolidario/capa.jpg"
                  alt="Jovens atendidos pela APAE Américo Brasiliense, parceira do programa EletroSolidário"
                  width="525" height="740" loading="eager" decoding="async" class="article-cover">
+          </aside>
+
+          <!-- EN: Content — editorial text, wraps around the floated image above -->
+          <div class="article-content">
+
+            <p class="article-lead">
+              A partir de 3 de agosto de 2026, a APAE Américo Brasiliense passou a integrar o
+              <strong>EletroSolidário</strong>, programa desenvolvido em parceria com a
+              <strong>Indústria Fox</strong> que transforma eletrodomésticos e eletroeletrônicos
+              fora de uso em recursos financeiros para a instituição.
+            </p>
 
             <div class="article-share">
               <span class="article-share__label">Compartilhar:</span>
@@ -358,6 +369,11 @@
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg>
                 Facebook
               </a>
+              <a href="https://www.instagram.com/p/Dbk2vFCDlcx/" target="_blank" rel="noopener"
+                 class="article-share__btn article-share__btn--instagram" aria-label="Ver no Instagram">
+                <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="url(#ig-gradient)"/><circle cx="12" cy="12" r="4" fill="none" stroke="white" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="white"/></svg>
+                Instagram
+              </a>
               <button type="button" class="article-share__btn article-share__btn--copy" data-copy-link
                       data-copy-value="https://apaeamericobrasiliense.com.br/noticia-parceria-eletrosolidario"
                       aria-label="Copiar link da notícia">
@@ -365,17 +381,6 @@
                 <span class="article-share__btn-text">Copiar link</span>
               </button>
             </div>
-          </aside>
-
-          <!-- EN: Content column — editorial text -->
-          <div class="article-content">
-
-            <p class="article-lead">
-              A partir de 3 de agosto de 2026, a APAE Américo Brasiliense passou a integrar o
-              <strong>EletroSolidário</strong>, programa desenvolvido em parceria com a
-              <strong>Indústria Fox</strong> que transforma eletrodomésticos e eletroeletrônicos
-              fora de uso em recursos financeiros para a instituição.
-            </p>
 
             <h2 class="article-h2">O que é o EletroSolidário</h2>
             <p class="article-text">
@@ -393,27 +398,29 @@
               diretamente para os atendimentos da APAE.
             </p>
 
-            <img src="images/noticias/parceria-industriafox-eletrosolidario/coletor.jpg"
-                 alt="Coletor do EletroSolidário para descarte de eletroeletrônicos"
-                 width="480" height="600" loading="lazy" decoding="async" class="article-inline-img">
+            <div class="article-doacao-row">
+              <img src="images/noticias/parceria-industriafox-eletrosolidario/coletor.jpg"
+                   alt="Coletor do EletroSolidário para descarte de eletroeletrônicos"
+                   width="480" height="600" loading="lazy" decoding="async" class="article-inline-img">
 
-            <div class="article-check-grid">
-              <div class="article-check-card article-check-card--yes">
-                <h3>✓ O que pode ser doado</h3>
-                <p>
-                  Micro-ondas, forno, fogão, máquina de lavar, geladeira, televisão, rádio,
-                  home theater, DVD player, celular, notebook, impressora, scanner,
-                  liquidificador, batedeira, sanduicheira, torradeira, mixer, processador de
-                  alimentos, secador de cabelo, chapinha, barbeador elétrico, panela elétrica,
-                  fritadeira, rádio relógio, brinquedos eletrônicos, tablet, monitor e
-                  videocassete.
-                </p>
-              </div>
-              <div class="article-check-card article-check-card--no">
-                <h3>✕ O que não pode ser doado</h3>
-                <p>
-                  Lâmpadas, pilhas, baterias e produtos que não sejam de uso doméstico.
-                </p>
+              <div class="article-check-grid">
+                <div class="article-check-card article-check-card--yes">
+                  <h3>✓ O que pode ser doado</h3>
+                  <p>
+                    Micro-ondas, forno, fogão, máquina de lavar, geladeira, televisão, rádio,
+                    home theater, DVD player, celular, notebook, impressora, scanner,
+                    liquidificador, batedeira, sanduicheira, torradeira, mixer, processador de
+                    alimentos, secador de cabelo, chapinha, barbeador elétrico, panela elétrica,
+                    fritadeira, rádio relógio, brinquedos eletrônicos, tablet, monitor e
+                    videocassete.
+                  </p>
+                </div>
+                <div class="article-check-card article-check-card--no">
+                  <h3>✕ O que não pode ser doado</h3>
+                  <p>
+                    Lâmpadas, pilhas, baterias e produtos que não sejam de uso doméstico.
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -620,7 +627,7 @@
     </svg>
   </a>
 
-  <script src="js/main.js?v=20260829" defer></script>
+  <script src="js/main.js?v=20260830" defer></script>
   <script async src="//www.instagram.com/embed.js"></script>
 
   <!-- EN: VLibras accessibility widget - mandatory for NGOs (Brazilian gov) -->

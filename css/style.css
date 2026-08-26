@@ -6918,20 +6918,21 @@ body {
 }
 .article-back:hover { text-decoration: underline; }
 
-/* Horizontal layout: media column left, content column right — standard for all news articles */
+/* Magazine layout: image floats left, text wraps beside it, then continues
+   full width once past the image — standard for all news articles */
 .article-layout { display: block; }
 
 @media (min-width: 900px) {
-  .article-layout {
-    display: grid;
-    grid-template-columns: 400px 1fr;
-    gap: 48px;
-    align-items: start;
+  .article-media {
+    float: left;
+    width: 400px;
+    margin-right: 48px;
   }
-  .article-media { position: sticky; top: 96px; }
 }
 
-.article-content { max-width: 700px; }
+.article-content { max-width: 720px; }
+
+.article-layout::after { content: ''; display: table; clear: both; }
 
 .article-cover {
   display: block;
@@ -6983,6 +6984,7 @@ body {
 }
 .article-share__btn--whatsapp:hover { border-color: #25D366; background: #F0FDF4; color: #16803C; }
 .article-share__btn--facebook:hover { border-color: #1877F2; background: #EFF6FF; color: #1877F2; }
+.article-share__btn--instagram:hover { border-color: #d6249f; background: #FDF2F8; color: #d6249f; }
 .article-share__btn--copy:hover { border-color: var(--blue-primary); background: var(--blue-light); }
 .article-share__btn--copied { border-color: #16A34A !important; background: #F0FDF4 !important; color: #16A34A !important; }
 
@@ -7029,6 +7031,28 @@ body {
 }
 @media (min-width: 640px) {
   .article-check-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Doação row — collector photo beside the two check cards (stacked) */
+.article-doacao-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 20px;
+  margin: 20px 0 28px;
+}
+.article-doacao-row .article-inline-img {
+  width: 220px;
+  max-width: 220px;
+  flex-shrink: 0;
+  margin: 0;
+}
+.article-doacao-row .article-check-grid {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 220px;
+  margin: 0;
 }
 
 .article-check-card {
