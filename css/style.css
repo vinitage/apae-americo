@@ -7018,7 +7018,7 @@ body {
 
 .article-lead {
   font-family: var(--font-body);
-  font-size: 1.125rem;
+  font-size: 1.1875rem;
   line-height: 1.75;
   color: var(--gray-900);
   font-weight: 500;
@@ -7035,7 +7035,7 @@ body {
 
 .article-text {
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: 1.0625rem;
   line-height: 1.75;
   color: var(--gray-600);
   margin-bottom: 16px;
@@ -7156,8 +7156,9 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-  margin: 24px 0;
+  margin: 24px auto;
   clear: left;
+  max-width: 620px;
 }
 .article-photo {
   display: block;
