@@ -6048,6 +6048,14 @@ body {
   border-radius: 2px;
 }
 
+.gv-section-header--sub { margin: 40px 0 24px; }
+.gv-section-subtitle {
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--blue-primary);
+}
+
 /* -- Photos section -- */
 .gv-photos {
   background: #fff;
@@ -7142,6 +7150,63 @@ body {
   }
 }
 
+/* Article photo gallery — clickable photos that open the lightbox
+   (see LIGHTBOX rules further down for the modal itself) */
+.article-photo-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 24px 0;
+  clear: left;
+}
+.article-photo {
+  display: block;
+  flex: 1;
+  min-width: 220px;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: zoom-in;
+  border-radius: 12px;
+  overflow: hidden;
+  line-height: 0;
+}
+.article-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform var(--ease-fast);
+}
+.article-photo:hover img { transform: scale(1.03); }
+.article-photo--wide {
+  flex: 1 1 100%;
+}
+.article-photo--wide img { min-height: 260px; }
+
+.article-cta + .article-photo-row,
+.article-text + .article-photo-row { margin-top: 24px; }
+
+.article-gallery-cta { text-align: center; margin: 32px 0; }
+.article-gallery-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 10px;
+  border: 1.5px solid var(--blue-primary);
+  background: var(--white);
+  color: var(--blue-primary);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: .9375rem;
+  text-decoration: none;
+  transition: background var(--ease-fast), color var(--ease-fast);
+}
+.article-gallery-cta__btn:hover { background: var(--blue-primary); color: var(--white); }
+
 .article-embed { margin: 32px auto 0; max-width: 500px; }
 
 /* ── Mobile: reduzir espaço entre header e hero (index.html) ────────────────── */
@@ -7211,3 +7276,68 @@ body {
 .card-share__item svg { flex-shrink: 0; }
 .card-share__item--whatsapp svg { color: #25D366; }
 .card-share__item--facebook svg { color: #1877F2; }
+
+/* =================================================================
+   LIGHTBOX — photo zoom with caption (article gallery + Fotos e Vídeos)
+   ================================================================= */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(10, 15, 30, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.lightbox[hidden] { display: none; }
+
+.lightbox__inner {
+  max-width: min(900px, 92vw);
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.lightbox__img {
+  display: block;
+  max-width: 100%;
+  max-height: 76vh;
+  width: auto;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+}
+
+.lightbox__caption {
+  color: rgba(255,255,255,0.92);
+  font-family: var(--font-body);
+  font-size: .9375rem;
+  text-align: center;
+  line-height: 1.5;
+  max-width: 640px;
+}
+
+.lightbox__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.12);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background var(--ease-fast);
+}
+.lightbox__close:hover { background: rgba(255,255,255,0.24); }
+
+@media (max-width: 640px) {
+  .lightbox__close { top: 12px; right: 12px; width: 40px; height: 40px; }
+}

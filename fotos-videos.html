@@ -39,7 +39,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="css/style.css?v=20260836">
+  <link rel="stylesheet" href="css/style.css?v=20260837">
 
   <!-- Schema JSON-LD: BreadcrumbList -->
   <script type="application/ld+json">
@@ -310,15 +310,17 @@
       </div>
     </div>
 
-    <!-- EN: Photos grid — 9 placeholder cells, 3-col desktop / 2-col tablet / 1-col mobile -->
-    <section class="gv-photos" aria-labelledby="gv-photos-title">
+    <!-- EN: Photos grid — clickable cells that open the lightbox with a caption -->
+    <section class="gv-photos" id="fotos" aria-labelledby="gv-photos-title">
       <div class="gv-section-inner">
         <header class="gv-section-header" data-reveal>
           <h2 class="gv-section-title" id="gv-photos-title">Fotos</h2>
         </header>
         <div class="gv-photos-grid" data-reveal>
 
-          <div class="gv-photo-cell">
+          <div class="gv-photo-cell" tabindex="0" role="button" data-lightbox
+               data-lightbox-caption="Equipe e atendidos da APAE Américo Brasiliense em evento comunitário com bandeira da instituição"
+               aria-label="Ampliar foto: equipe e atendidos em evento comunitário">
             <img src="images/evento-comunitario-equipe.jpeg"
                  alt="Equipe e atendidos da APAE Américo Brasiliense em evento comunitário com bandeira da instituição"
                  width="1156" height="651" loading="lazy" decoding="async">
@@ -327,7 +329,9 @@
             </div>
           </div>
 
-          <div class="gv-photo-cell gv-photo-cell--b">
+          <div class="gv-photo-cell gv-photo-cell--b" tabindex="0" role="button" data-lightbox
+               data-lightbox-caption="Equipe da APAE Américo Brasiliense no evento Autismo em Pauta — FEAPAES"
+               aria-label="Ampliar foto: evento Autismo em Pauta">
             <img src="images/evento-autismo-em-pauta.jpeg"
                  alt="Equipe da APAE Américo Brasiliense no evento Autismo em Pauta — FEAPAES"
                  width="1600" height="900" loading="lazy" decoding="async">
@@ -336,7 +340,9 @@
             </div>
           </div>
 
-          <div class="gv-photo-cell">
+          <div class="gv-photo-cell" tabindex="0" role="button" data-lightbox
+               data-lightbox-caption="Equipe da APAE Américo Brasiliense na Primeira Corrida Belinelli de Inclusão e Deficiência"
+               aria-label="Ampliar foto: Corrida Belinelli de Inclusão">
             <img src="images/corrida-belinelli-inclusao.jpeg"
                  alt="Equipe da APAE Américo Brasiliense na Primeira Corrida Belinelli de Inclusão e Deficiência"
                  width="1114" height="770" loading="lazy" decoding="async">
@@ -345,7 +351,9 @@
             </div>
           </div>
 
-          <div class="gv-photo-cell gv-photo-cell--b">
+          <div class="gv-photo-cell gv-photo-cell--b" tabindex="0" role="button" data-lightbox
+               data-lightbox-caption="Área externa da sede da APAE Américo Brasiliense com kombi da instituição"
+               aria-label="Ampliar foto: área externa da sede com kombi">
             <img src="images/area-externa-kombi.jpeg"
                  alt="Área externa da sede da APAE Américo Brasiliense com kombi da instituição"
                  width="1156" height="521" loading="lazy" decoding="async">
@@ -354,7 +362,9 @@
             </div>
           </div>
 
-          <div class="gv-photo-cell">
+          <div class="gv-photo-cell" tabindex="0" role="button" data-lightbox
+               data-lightbox-caption="Refeitório da sede da APAE Américo Brasiliense — espaço de convivência e refeições"
+               aria-label="Ampliar foto: refeitório da sede">
             <img src="images/refeitorio-sede.jpeg"
                  alt="Refeitório da sede da APAE Américo Brasiliense — espaço de convivência e refeições"
                  width="1156" height="521" loading="lazy" decoding="async">
@@ -363,10 +373,185 @@
             </div>
           </div>
 
-          <div class="gv-photo-cell gv-photo-cell--b">
+          <div class="gv-photo-cell gv-photo-cell--b" tabindex="0" role="button" data-lightbox
+               data-lightbox-caption="Voluntários da APAE Américo Brasiliense preparando refeições para doação"
+               aria-label="Ampliar foto: voluntários preparando refeições">
             <img src="images/voluntarios-preparo-refeicoes.jpeg"
                  alt="Voluntários da APAE Américo Brasiliense preparando refeições para doação"
                  width="1280" height="958" loading="lazy" decoding="async">
+            <div class="gv-photo-overlay" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- EN: Photos from the Horta Educativa e Comunitária project (Fórum São Martinho) -->
+        <header class="gv-section-header gv-section-header--sub" data-reveal>
+          <h3 class="gv-section-subtitle">Projeto Horta Educativa e Comunitária</h3>
+        </header>
+        <div class="gv-photos-grid" data-reveal>
+
+          <div class="gv-photo-cell" tabindex="0" role="button" data-lightbox
+               data-lightbox-caption="Equipe e parceiros durante mutirão de plantio na Horta Educativa e Comunitária"
+               aria-label="Ampliar foto: mutirão de plantio na horta">
+            <img src="images/noticias/parceria-horta-solidaria/horta-mutirao-plantio-2.jpg"
+                 alt="Equipe e parceiros durante mutirão de plantio na Horta Educativa e Comunitária"
+                 width="1000" height="750" loading="lazy" decoding="async">
+            <div class="gv-photo-overlay" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            </div>
+          </div>
+
+          <div class="gv-photo-cell gv-photo-cell--b" tabindex="0" role="button" data-lightbox
+               data-lightbox-caption="Mutirão de plantio na Horta Educativa e Comunitária"
+               aria-label="Ampliar foto: mutirão de plantio">
+            <img src="images/noticias/parceria-horta-solidaria/horta-mutirao-plantio-1.jpg"
+                 alt="Mutirão de plantio na Horta Educativa e Comunitária"
+                 width="1000" height="750" loading="lazy" decoding="async">
+            <div class="gv-photo-overlay" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            </div>
+          </div>
+
+          <div class="gv-photo-cell" tabindex="0" role="button" data-lightbox
+               data-lightbox-caption="Plantio em grupo na Horta Educativa e Comunitária"
+               aria-label="Ampliar foto: plantio em grupo">
+            <img src="images/noticias/parceria-horta-solidaria/horta-mutirao-plantio-3.jpg"
+                 alt="Plantio em grupo na Horta Educativa e Comunitária"
+                 width="1000" height="750" loading="lazy" decoding="async">
+            <div class="gv-photo-overlay" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            </div>
+          </div>
+
+          <div class="gv-photo-cell gv-photo-cell--b" tabindex="0" role="button" data-lightbox
+               data-lightbox-caption="Momento de plantio coletivo na horta da APAE"
+               aria-label="Ampliar foto: plantio coletivo">
+            <img src="images/noticias/parceria-horta-solidaria/horta-mutirao-plantio-4.jpg"
+                 alt="Momento de plantio coletivo na horta da APAE"
+                 width="1000" height="750" loading="lazy" decoding="async">
+            <div class="gv-photo-overlay" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            </div>
+          </div>
+
+          <div class="gv-photo-cell" tabindex="0" role="button" data-lightbox
+               data-lightbox-caption="Visão geral dos canteiros da Horta Educativa e Comunitária"
+               aria-label="Ampliar foto: visão geral dos canteiros">
+            <img src="images/noticias/parceria-horta-solidaria/horta-visao-geral-canteiros.jpg"
+                 alt="Visão geral dos canteiros da Horta Educativa e Comunitária"
+                 width="1000" height="750" loading="lazy" decoding="async">
+            <div class="gv-photo-overlay" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            </div>
+          </div>
+
+          <div class="gv-photo-cell gv-photo-cell--b" tabindex="0" role="button" data-lightbox
+               data-lightbox-caption="Canteiros com diferentes hortaliças plantadas lado a lado"
+               aria-label="Ampliar foto: canteiros com diversidade de hortaliças">
+            <img src="images/noticias/parceria-horta-solidaria/horta-canteiro-diversidade.jpg"
+                 alt="Canteiros com diferentes hortaliças plantadas lado a lado"
+                 width="1000" height="1333" loading="lazy" decoding="async">
+            <div class="gv-photo-overlay" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            </div>
+          </div>
+
+          <div class="gv-photo-cell" tabindex="0" role="button" data-lightbox
+               data-lightbox-caption="Mudas de couve plantadas na Horta Educativa e Comunitária da APAE"
+               aria-label="Ampliar foto: mudas de couve">
+            <img src="images/noticias/parceria-horta-solidaria/horta-canteiro-couve.jpg"
+                 alt="Mudas de couve plantadas na Horta Educativa e Comunitária da APAE"
+                 width="1000" height="1333" loading="lazy" decoding="async">
+            <div class="gv-photo-overlay" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            </div>
+          </div>
+
+          <div class="gv-photo-cell gv-photo-cell--b" tabindex="0" role="button" data-lightbox
+               data-lightbox-caption="Muda de alface lisa brotando no canteiro da horta"
+               aria-label="Ampliar foto: muda de alface lisa">
+            <img src="images/noticias/parceria-horta-solidaria/horta-muda-alface-lisa.jpg"
+                 alt="Muda de alface lisa brotando no canteiro da horta"
+                 width="1000" height="1333" loading="lazy" decoding="async">
+            <div class="gv-photo-overlay" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            </div>
+          </div>
+
+          <div class="gv-photo-cell" tabindex="0" role="button" data-lightbox
+               data-lightbox-caption="Alface crespa cultivada na Horta Educativa e Comunitária"
+               aria-label="Ampliar foto: alface crespa">
+            <img src="images/noticias/parceria-horta-solidaria/horta-alface-crespa.jpg"
+                 alt="Alface crespa cultivada na Horta Educativa e Comunitária"
+                 width="1000" height="1333" loading="lazy" decoding="async">
+            <div class="gv-photo-overlay" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            </div>
+          </div>
+
+          <div class="gv-photo-cell gv-photo-cell--b" tabindex="0" role="button" data-lightbox
+               data-lightbox-caption="Canteiro de cebolinha em desenvolvimento na horta"
+               aria-label="Ampliar foto: canteiro de cebolinha">
+            <img src="images/noticias/parceria-horta-solidaria/horta-canteiro-cebolinha.jpg"
+                 alt="Canteiro de cebolinha em desenvolvimento na horta"
+                 width="1000" height="1333" loading="lazy" decoding="async">
+            <div class="gv-photo-overlay" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            </div>
+          </div>
+
+          <div class="gv-photo-cell" tabindex="0" role="button" data-lightbox
+               data-lightbox-caption="Mudas de beterraba plantadas na horta, com participante ao fundo"
+               aria-label="Ampliar foto: mudas de beterraba">
+            <img src="images/noticias/parceria-horta-solidaria/horta-canteiro-beterraba.jpg"
+                 alt="Mudas de beterraba plantadas na horta, com participante ao fundo"
+                 width="1000" height="1333" loading="lazy" decoding="async">
+            <div class="gv-photo-overlay" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            </div>
+          </div>
+
+          <div class="gv-photo-cell gv-photo-cell--b" tabindex="0" role="button" data-lightbox
+               data-lightbox-caption="Coentro cultivado na horta comunitária"
+               aria-label="Ampliar foto: coentro">
+            <img src="images/noticias/parceria-horta-solidaria/horta-coentro.jpg"
+                 alt="Coentro cultivado na horta comunitária"
+                 width="1000" height="1333" loading="lazy" decoding="async">
+            <div class="gv-photo-overlay" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            </div>
+          </div>
+
+          <div class="gv-photo-cell" tabindex="0" role="button" data-lightbox
+               data-lightbox-caption="Alfaces colhidas na Horta Educativa e Comunitária"
+               aria-label="Ampliar foto: alfaces colhidas">
+            <img src="images/noticias/parceria-horta-solidaria/horta-colheita-alface-1.jpg"
+                 alt="Alfaces colhidas na Horta Educativa e Comunitária"
+                 width="900" height="1600" loading="lazy" decoding="async">
+            <div class="gv-photo-overlay" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            </div>
+          </div>
+
+          <div class="gv-photo-cell gv-photo-cell--b" tabindex="0" role="button" data-lightbox
+               data-lightbox-caption="Colheita de alfaces da horta, prontas para consumo"
+               aria-label="Ampliar foto: colheita de alfaces">
+            <img src="images/noticias/parceria-horta-solidaria/horta-colheita-alface-2.jpg"
+                 alt="Colheita de alfaces da horta, prontas para consumo"
+                 width="1000" height="562" loading="lazy" decoding="async">
+            <div class="gv-photo-overlay" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            </div>
+          </div>
+
+          <div class="gv-photo-cell" tabindex="0" role="button" data-lightbox
+               data-lightbox-caption="Equipe e atendidos da APAE comemorando a colheita da horta"
+               aria-label="Ampliar foto: equipe comemorando a colheita">
+            <img src="images/noticias/parceria-horta-solidaria/horta-equipe-colheita.jpg"
+                 alt="Equipe e atendidos da APAE comemorando a colheita da horta"
+                 width="1000" height="488" loading="lazy" decoding="async">
             <div class="gv-photo-overlay" aria-hidden="true">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
             </div>
@@ -605,7 +790,18 @@
     </svg>
   </a>
 
-  <script src="js/main.js?v=20260832" defer></script>
+  <!-- Lightbox — used by the photos grid ([data-lightbox] triggers) -->
+  <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Visualização de imagem">
+    <button type="button" class="lightbox__close" data-lightbox-close aria-label="Fechar">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="lightbox__inner">
+      <img src="" alt="" class="lightbox__img">
+      <p class="lightbox__caption"></p>
+    </div>
+  </div>
+
+  <script src="js/main.js?v=20260833" defer></script>
   <script async src="//www.instagram.com/embed.js"></script>
 
   <!-- EN: VLibras accessibility widget - mandatory for NGOs (Brazilian gov) -->

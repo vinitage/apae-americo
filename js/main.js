@@ -610,3 +610,55 @@
       });
   });
 })();
+
+
+/* -----------------------------------------------------------------
+   14. LIGHTBOX — [data-lightbox] photo zoom with caption
+   Used by the article photo gallery and the Fotos e Vídeos grid.
+   ----------------------------------------------------------------- */
+(function () {
+  var lightbox = document.getElementById('lightbox');
+  if (!lightbox) return;
+
+  var imgEl = lightbox.querySelector('.lightbox__img');
+  var capEl = lightbox.querySelector('.lightbox__caption');
+
+  function openLightbox(src, caption) {
+    imgEl.src = src;
+    imgEl.alt = caption || '';
+    capEl.textContent = caption || '';
+    lightbox.hidden = false;
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.hidden = true;
+    imgEl.src = '';
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('click', function (e) {
+    var trigger = e.target.closest('[data-lightbox]');
+    if (trigger) {
+      var img = trigger.tagName === 'IMG' ? trigger : trigger.querySelector('img');
+      var full = trigger.getAttribute('data-lightbox-src') || (img && img.currentSrc) || (img && img.src);
+      var caption = trigger.getAttribute('data-lightbox-caption') || (img && img.alt) || '';
+      openLightbox(full, caption);
+      return;
+    }
+    if (!lightbox.hidden && (e.target.closest('[data-lightbox-close]') || e.target === lightbox)) {
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !lightbox.hidden) {
+      closeLightbox();
+      return;
+    }
+    if ((e.key === 'Enter' || e.key === ' ') && document.activeElement && document.activeElement.closest('[data-lightbox]')) {
+      e.preventDefault();
+      document.activeElement.click();
+    }
+  });
+})();
