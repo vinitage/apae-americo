@@ -312,22 +312,23 @@
 
 
 /* -----------------------------------------------------------------
-   9. LIGHTBOX — photo zoom for .gp-cell (home) and .gv-photo-cell (fotos-videos)
+   9. LIGHTBOX — photo zoom for .gp-cell (home), .gv-photo-cell
+   (fotos-videos) and .article-photo (news article galleries)
    ----------------------------------------------------------------- */
 (function () {
   var cells = Array.prototype.slice.call(
-    document.querySelectorAll('.gp-cell, .gv-photo-cell')
+    document.querySelectorAll('.gp-cell, .gv-photo-cell, .article-photo')
   ).filter(function (cell) { return !!cell.querySelector('img'); });
 
   if (!cells.length) return;
 
   var images = cells.map(function (cell) {
     var img = cell.querySelector('img');
-    return { src: img.src, alt: img.alt || '' };
+    return { src: img.currentSrc || img.src, alt: img.alt || '' };
   });
 
   var current = 0;
-  var lb, lbImg, lbCaption, lbCounter, lbClose, lbPrev, lbNext;
+  var lb, lbImg, lbCaption, lbCounter, lbClose, lbPrev, lbNext, lbDownload;
   var lastFocused;
 
   /* Build and inject lightbox DOM once */
@@ -338,6 +339,11 @@
   lb.setAttribute('aria-label', 'Visualizar foto ampliada');
   lb.setAttribute('aria-hidden', 'true');
   lb.innerHTML =
+    '<a class="lightbox__download" download aria-label="Baixar foto">' +
+      '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+        '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>' +
+      '</svg>' +
+    '</a>' +
     '<button class="lightbox__close" aria-label="Fechar lightbox">' +
       '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">' +
         '<line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>' +
@@ -360,12 +366,18 @@
     '<p class="lightbox__counter" aria-live="polite"></p>';
   document.body.appendChild(lb);
 
-  lbImg     = lb.querySelector('.lightbox__img');
-  lbCaption = lb.querySelector('.lightbox__caption');
-  lbCounter = lb.querySelector('.lightbox__counter');
-  lbClose   = lb.querySelector('.lightbox__close');
-  lbPrev    = lb.querySelector('.lightbox__prev');
-  lbNext    = lb.querySelector('.lightbox__next');
+  lbImg      = lb.querySelector('.lightbox__img');
+  lbCaption  = lb.querySelector('.lightbox__caption');
+  lbCounter  = lb.querySelector('.lightbox__counter');
+  lbClose    = lb.querySelector('.lightbox__close');
+  lbPrev     = lb.querySelector('.lightbox__prev');
+  lbNext     = lb.querySelector('.lightbox__next');
+  lbDownload = lb.querySelector('.lightbox__download');
+
+  function filenameFromSrc(src) {
+    var name = src.split('/').pop().split('?')[0] || 'foto-apae.jpg';
+    return name;
+  }
 
   function show(index) {
     current = (index + images.length) % images.length;
@@ -373,6 +385,8 @@
     lbImg.alt = images[current].alt;
     lbCaption.textContent = images[current].alt;
     lbCounter.textContent = (current + 1) + ' / ' + images.length;
+    lbDownload.href = images[current].src;
+    lbDownload.setAttribute('download', filenameFromSrc(images[current].src));
     if (images.length === 1) {
       lb.setAttribute('data-single', '');
     } else {
@@ -608,57 +622,5 @@
         if (err && err.name === 'AbortError') return;
         fallback();
       });
-  });
-})();
-
-
-/* -----------------------------------------------------------------
-   14. LIGHTBOX — [data-lightbox] photo zoom with caption
-   Used by the article photo gallery and the Fotos e Vídeos grid.
-   ----------------------------------------------------------------- */
-(function () {
-  var lightbox = document.getElementById('lightbox');
-  if (!lightbox) return;
-
-  var imgEl = lightbox.querySelector('.lightbox__img');
-  var capEl = lightbox.querySelector('.lightbox__caption');
-
-  function openLightbox(src, caption) {
-    imgEl.src = src;
-    imgEl.alt = caption || '';
-    capEl.textContent = caption || '';
-    lightbox.hidden = false;
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeLightbox() {
-    lightbox.hidden = true;
-    imgEl.src = '';
-    document.body.style.overflow = '';
-  }
-
-  document.addEventListener('click', function (e) {
-    var trigger = e.target.closest('[data-lightbox]');
-    if (trigger) {
-      var img = trigger.tagName === 'IMG' ? trigger : trigger.querySelector('img');
-      var full = trigger.getAttribute('data-lightbox-src') || (img && img.currentSrc) || (img && img.src);
-      var caption = trigger.getAttribute('data-lightbox-caption') || (img && img.alt) || '';
-      openLightbox(full, caption);
-      return;
-    }
-    if (!lightbox.hidden && (e.target.closest('[data-lightbox-close]') || e.target === lightbox)) {
-      closeLightbox();
-    }
-  });
-
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && !lightbox.hidden) {
-      closeLightbox();
-      return;
-    }
-    if ((e.key === 'Enter' || e.key === ' ') && document.activeElement && document.activeElement.closest('[data-lightbox]')) {
-      e.preventDefault();
-      document.activeElement.click();
-    }
   });
 })();
